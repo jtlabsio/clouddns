@@ -1,0 +1,13 @@
+google:
+  credentialsPath: ./credentials.json 
+  managedZone: example-zone
+  projectID: example-project
+  record: ip.example.com.
+  ttl: 300
+logging:
+  level: info
+server:
+  address: 0.0.0.0:8000
+updater:
+  interval: 60m
+  publicIPEndpoint: https://ipinfo.io/ip
