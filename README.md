@@ -38,7 +38,7 @@ The above commands will generate a `credentials.json` file for a service account
 
 To run this project using Docker, follow these steps:
 
-1. Create your configuration:
+Step 1. Create your configuration:
 
   Create a YAML file in `./settings` with the name of your zone... e.g., `example-zone.yaml`. The contents should look like this:
 
@@ -49,7 +49,7 @@ To run this project using Docker, follow these steps:
     record: myip.example.com.  # Replace with the record you want to update (be sure there is a . at the end of the record)
   ```
 
-1. Build the Docker image:
+Step 2. Build the Docker image:
 
   ```bash
   make docker
@@ -57,7 +57,7 @@ To run this project using Docker, follow these steps:
 
   __note__: If you do not have`make` installed, you can use `docker build -t clouddns-server .`
 
-1. Run the Docker container:
+Step 3. Run the Docker container:
 
   Replace the `example-zone` with the zone name used in the step above (do not include the `.yaml` extension).
 
@@ -67,7 +67,7 @@ To run this project using Docker, follow these steps:
 
 ### Running Locally with Go
 
-1. Create your configuration:
+Step 1. Create your configuration:
 
   Create a YAML file in `./settings` with the name of your zone... e.g., `example-zone.yaml`. The contents should look like this:
 
@@ -78,7 +78,7 @@ To run this project using Docker, follow these steps:
     record: myip.example.com.  # Replace with the record you want to update (be sure there is a . at the end of the record)
   ```
 
-1. Run the server:
+Step 2. Run the server:
 
   ```bash
   GO_ENV=example-zone go run cmd/main.go
