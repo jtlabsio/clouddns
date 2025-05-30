@@ -97,6 +97,15 @@ func updateIP(sts *models.Status, dns *models.DNS) {
 		return
 	}
 
+	// no need to update if the IP hasn't changed
+	if sts.Latest.IP == ip.IP {
+		log.Debug().
+			Str("ip", ip.IP).
+			Msg("IP has not changed, no need to update")
+
+		return
+	}
+
 	// update the existing record...
 	if err := dns.Update(ip.IP); err != nil {
 		log.Error().Err(err).Msg("Failed to update DNS record")

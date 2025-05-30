@@ -6,6 +6,8 @@ import (
 	"time"
 )
 
+const version string = "0.1.1"
+
 type Status struct {
 	Current struct {
 		Error     error     `json:"error,omitempty"`
@@ -19,6 +21,7 @@ type Status struct {
 		Timestamp time.Time `json:"timestamp"`
 	} `json:"previousRun"`
 	Settings *Settings `json:"settings"`
+	Version  string
 }
 
 func (sts *Status) writeHTTPResponse(w http.ResponseWriter) {
@@ -55,5 +58,6 @@ func (sts *Status) UpdateLatest(strt time.Time, ip string, err ...error) {
 func NewStatus(s *Settings) *Status {
 	return &Status{
 		Settings: s,
+		Version:  version,
 	}
 }
