@@ -65,6 +65,8 @@ Step 3. Run the Docker container:
   docker run -d --name clouddns-server -p 8000:8000 -e GO_ENV=example-zone --restart unless-stopped clouddns-server
   ```
 
+  __note__: If you are running this on a local machine, you may need to adjust the port mapping and environment variable accordingly.
+
 ### Running Locally with Go
 
 Step 1. Create your configuration:
